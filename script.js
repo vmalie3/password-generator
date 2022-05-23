@@ -9,15 +9,24 @@ function generatePassword() {
   var uppercase = lowercase.toUpperCase();
 
   var input = parseInt(prompt("Choose a length between 8 and 128"));
+  var in2 = prompt("Do you want your password to contain lowercase letters? (yes or no)");
+  var lowercaseChoice = in2.toLowerCase()[0];
+  var in3 = prompt("Do you want your password to contain numbers? (yes or no)");
+  var numbersChoice = in3.toLowerCase()[0];
+  var in4 = prompt("Do you want your password to contain special characters? (yes or no)")
+  var specialChoice = in4.toLowerCase()[0];
+  var in5 = prompt("Do you want your password to contain uppercase letters? (yes or no)") 
+  var uppercaseChoice = in5.toLowerCase()[0];
 
   if (input >= 8 && input <= 128) {
-    // GOOD CODE GOES HERE
   } else {
-    alert("NOT COOL");
+    alert("Do Better");
   }
+  return "";  
 
-  return "";
+  
 }
+
 
 // Write password to the #password input
 function writePassword() {
