@@ -8,17 +8,17 @@ function generatePassword() {
   var special = "#$%&()*+,-./:;<=>?";
   var uppercase = lowercase.toUpperCase();
 
-  var input = parseInt(prompt("Choose a length between 8 and 128"));
-  var in2 = prompt("Do you want your password to contain lowercase letters? (yes or no)");
-  var lowercaseChoice = in2.toLowerCase()[0];
-  var in3 = prompt("Do you want your password to contain numbers? (yes or no)");
-  var numbersChoice = in3.toLowerCase()[0];
-  var in4 = prompt("Do you want your password to contain special characters? (yes or no)")
-  var specialChoice = in4.toLowerCase()[0];
-  var in5 = prompt("Do you want your password to contain uppercase letters? (yes or no)") 
-  var uppercaseChoice = in5.toLowerCase()[0];
+  var input = parseInt(prompt("Choose a length between 8 and 128"));  
 
   if (input >= 8 && input <= 128) {
+    var in2 = confirm("Do you want your password to contain lowercase letters?");
+    var in3 = confirm("Do you want your password to contain numbers?");
+    var in4 = confirm("Do you want your password to contain special characters?");
+    var in5 = confirm("Do you want your password to contain uppercase letters?");
+    console.log(in2);
+    console.log(in3);
+    console.log(in4);
+    console.log(in5);
   } else {
     alert("Do Better");
   }
@@ -26,6 +26,8 @@ function generatePassword() {
 
   
 }
+
+
 
 
 // Write password to the #password input
