@@ -23,45 +23,48 @@ function generatePassword() {
     if (!in2 && !in3 && !in4 && !in5) {
       alert("Must contain at least one type of character");
     }
+    var allowedChar = '';
 
     if (in2 && !in3 && !in4 && !in5) {
-      var result = ''
-      for (var i=0; i < input; i++) {
-        result += lowercase[Math.floor(Math.random()*input)];
-      }
-      return result;
-    }  else if (!in2 && in3 && !in4 && !in5) {
-      var result2 = ''
-      for (i=0; i < input; i++) {
-        result2 += numbers[Math.floor(Math.random()*input)];
-      }
-      return result2;
+      allowedChar += lowercase;
+    } else if (!in2 && in3 && !in4 && !in5) {
+      allowedChar += numbers;
     } else if (!in2 && !in3 && in4 && !in5) {
-      var result3 =''
-      for (var i=0; i < input; i++) {
-        result3 += special[Math.floor(Math.random()*input)];
-      }
-      return result3;
+      allowedChar += special;
     } else if (!in2 && !in3 && !in4 && in5) {
-      var result4 =''
-      for (var i=0; i < input; i++) {
-        result4 += uppercase[Math.floor(Math.random()*input)];
-      }
-      return result4;
+      allowedChar += uppercase;
     } else if (in2 && in3 && !in4 && !in5) {
-      var result5 = ''
-      for (var i=0; i < input; i++) {
-        
-      }
+      allowedChar += lowercase + numbers;
+    } else if (in2 && !in3 && in4 && !in5) {
+      allowedChar += lowercase + special;
+    } else if (in2 && !in3 && !in4 && in5) {
+      allowedChar += lowercase + uppercase;
+    } else if (!in2 && in3 && in4 && !in5) {
+      allowedChar += numbers + special;
+    } else if (!in2 && in3 && !in4 && in5) {
+      allowedChar += numbers + uppercase;
+    } else if (!in2 && !in3 && in4 && in5) {
+      allowedChar += special + uppercase;
+    } else if (in2 && in3 && in4 && !in5) {
+      allowedChar += lowercase + numbers + special;
+    }else if (in2 && in3 && !in4 && in5) {
+      allowedChar += lowercase + numbers + uppercase;
+    }else if (!in2 && in3 && in4 && in5) {
+      allowedChar += numbers + special + uppercase;
+    } else if (in2 && in3 && in4 && in5) {
+      allowedChar += lowercase + numbers + special + uppercase;
     }
-  
 
+    for (var i=0; i < input; i++) {
+      var result = ''
+      result += allowedChar[Math.floor(Math.random()*input)];
+    }
+    return result;
+  
   } else {
     alert("Do Better");
   }
   return "";  
-
-
 
 }
 
