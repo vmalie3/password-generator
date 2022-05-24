@@ -24,39 +24,52 @@ function generatePassword() {
       alert("Must contain at least one type of character");
     }
     var allowedChar = '';
-
-    if (in2 && !in3 && !in4 && !in5) {
-      allowedChar += lowercase;
-    } else if (!in2 && in3 && !in4 && !in5) {
-      allowedChar += numbers;
-    } else if (!in2 && !in3 && in4 && !in5) {
-      allowedChar += special;
-    } else if (!in2 && !in3 && !in4 && in5) {
-      allowedChar += uppercase;
-    } else if (in2 && in3 && !in4 && !in5) {
-      allowedChar += lowercase + numbers;
-    } else if (in2 && !in3 && in4 && !in5) {
-      allowedChar += lowercase + special;
-    } else if (in2 && !in3 && !in4 && in5) {
-      allowedChar += lowercase + uppercase;
-    } else if (!in2 && in3 && in4 && !in5) {
-      allowedChar += numbers + special;
-    } else if (!in2 && in3 && !in4 && in5) {
-      allowedChar += numbers + uppercase;
-    } else if (!in2 && !in3 && in4 && in5) {
-      allowedChar += special + uppercase;
-    } else if (in2 && in3 && in4 && !in5) {
-      allowedChar += lowercase + numbers + special;
-    }else if (in2 && in3 && !in4 && in5) {
-      allowedChar += lowercase + numbers + uppercase;
-    }else if (!in2 && in3 && in4 && in5) {
-      allowedChar += numbers + special + uppercase;
-    } else if (in2 && in3 && in4 && in5) {
+    if (in2 && in3 && in4 && in5) {
       allowedChar += lowercase + numbers + special + uppercase;
     }
+    if (in2 && !in3 && !in4 && !in5) {
+      allowedChar += lowercase;
+    }
+    if (!in2 && in3 && !in4 && !in5) {
+      allowedChar += numbers;
+    }
+    if (!in2 && !in3 && in4 && !in5) {
+      allowedChar += special;
+    }
+    if (!in2 && !in3 && !in4 && in5) {
+      allowedChar += uppercase;
+    }
+    if (in2 && in3 && !in4 && !in5) {
+      allowedChar += lowercase + numbers;
+    }
+    if (in2 && !in3 && in4 && !in5) {
+      allowedChar += lowercase + special;
+    }
+    if (in2 && !in3 && !in4 && in5) {
+      allowedChar += lowercase + uppercase;
+    }
+    if (!in2 && in3 && in4 && !in5) {
+      allowedChar += numbers + special;
+    }
+    if (!in2 && in3 && !in4 && in5) {
+      allowedChar += numbers + uppercase;
+    }
+    if (!in2 && !in3 && in4 && in5) {
+      allowedChar += special + uppercase;
+    }
+    if (in2 && in3 && in4 && !in5) {
+      allowedChar += lowercase + numbers + special;
+    }
+    if (in2 && in3 && !in4 && in5) {
+      allowedChar += lowercase + numbers + uppercase;
+    }
+    if (!in2 && in3 && in4 && in5) {
+      allowedChar += numbers + special + uppercase;
+    }
+    
 
+    var result = ''
     for (var i=0; i < input; i++) {
-      var result = ''
       result += allowedChar[Math.floor(Math.random()*input)];
     }
     return result;
