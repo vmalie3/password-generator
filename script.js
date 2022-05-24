@@ -19,12 +19,50 @@ function generatePassword() {
     console.log(in3);
     console.log(in4);
     console.log(in5);
+
+    if (!in2 && !in3 && !in4 && !in5) {
+      alert("Must contain at least one type of character");
+    }
+
+    if (in2 && !in3 && !in4 && !in5) {
+      var result = ''
+      for (var i=0; i < input; i++) {
+        result += lowercase[Math.floor(Math.random()*input)];
+      }
+      return result;
+    }  else if (!in2 && in3 && !in4 && !in5) {
+      var result2 = ''
+      for (i=0; i < input; i++) {
+        result2 += numbers[Math.floor(Math.random()*input)];
+      }
+      return result2;
+    } else if (!in2 && !in3 && in4 && !in5) {
+      var result3 =''
+      for (var i=0; i < input; i++) {
+        result3 += special[Math.floor(Math.random()*input)];
+      }
+      return result3;
+    } else if (!in2 && !in3 && !in4 && in5) {
+      var result4 =''
+      for (var i=0; i < input; i++) {
+        result4 += uppercase[Math.floor(Math.random()*input)];
+      }
+      return result4;
+    } else if (in2 && in3 && !in4 && !in5) {
+      var result5 = ''
+      for (var i=0; i < input; i++) {
+        
+      }
+    }
+  
+
   } else {
     alert("Do Better");
   }
   return "";  
 
-  
+
+
 }
 
 
