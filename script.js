@@ -6,32 +6,32 @@ function generatePassword() {
   var lowercase = "abcdefghijklmnopqrstuvwxyz";
   var numbers = "0123456789";
   var special = "#$%&()*+,-./:;<=>?";
-  var uppercase = lowercase.toUpperCase();
+  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+  // First prompt to choose length
   var input = parseInt(prompt("Choose a length between 8 and 128"));  
-
+  
+  // the rest of th prompts inside an if statement requiring length between 8 and 128
   if (input >= 8 && input <= 128) {
     var in2 = confirm("Do you want your password to contain lowercase letters?");
     var in3 = confirm("Do you want your password to contain numbers?");
     var in4 = confirm("Do you want your password to contain special characters?");
     var in5 = confirm("Do you want your password to contain uppercase letters?");
-    console.log(in2);
-    console.log(in3);
-    console.log(in4);
-    console.log(in5);
 
+    //if statement alerting user that they must choose 1+ characters
     if (!in2 && !in3 && !in4 && !in5) {
       alert("Must contain at least one type of character");
     }
+    
+    //variable allowing changes based off responses
     var allowedChar = '';
-    if (in2 && in3 && in4 && in5) {
-      allowedChar += lowercase + numbers + special + uppercase;
-    }
+    
+    //if statements altering the above variable based off of confirm responses
     if (in2 && !in3 && !in4 && !in5) {
-      allowedChar += lowercase;
+      allowedChar != lowercase;
     }
     if (!in2 && in3 && !in4 && !in5) {
-      allowedChar += numbers;
+      allowedChar != numbers;
     }
     if (!in2 && !in3 && in4 && !in5) {
       allowedChar += special;
@@ -66,14 +66,17 @@ function generatePassword() {
     if (!in2 && in3 && in4 && in5) {
       allowedChar += numbers + special + uppercase;
     }
-    
+    if (in2 && in3 && in4 && in5) {
+      allowedChar +=  numbers + special + uppercase + lowercase;
+    }
 
+    //for loop and variable allowing the password to be randomly generated
     var result = ''
     for (var i=0; i < input; i++) {
       result += allowedChar[Math.floor(Math.random()*input)];
     }
     return result;
-  
+    //response if an incorrect length was entered
   } else {
     alert("Do Better");
   }
