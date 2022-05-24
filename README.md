@@ -7,7 +7,8 @@
 
 ## Description
 
+
 ## Visuals
-![Password]
+![Password](./images/password-generator.png)
 
 ## Resources
