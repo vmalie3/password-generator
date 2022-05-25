@@ -27,47 +27,17 @@ function generatePassword() {
     var allowedChar = '';
     
     //if statements altering the above variable based off of confirm responses
-    if (in2 && !in3 && !in4 && !in5) {
-      allowedChar != lowercase;
+    if (in2) {
+      allowedChar += lowercase;
     }
-    if (!in2 && in3 && !in4 && !in5) {
-      allowedChar != numbers;
+    if (in3) {
+      allowedChar += numbers;
     }
-    if (!in2 && !in3 && in4 && !in5) {
+    if (in4) {
       allowedChar += special;
     }
-    if (!in2 && !in3 && !in4 && in5) {
+    if(in5) {
       allowedChar += uppercase;
-    }
-    if (in2 && in3 && !in4 && !in5) {
-      allowedChar += lowercase + numbers;
-    }
-    if (in2 && !in3 && in4 && !in5) {
-      allowedChar += lowercase + special;
-    }
-    if (in2 && !in3 && !in4 && in5) {
-      allowedChar += lowercase + uppercase;
-    }
-    if (!in2 && in3 && in4 && !in5) {
-      allowedChar += numbers + special;
-    }
-    if (!in2 && in3 && !in4 && in5) {
-      allowedChar += numbers + uppercase;
-    }
-    if (!in2 && !in3 && in4 && in5) {
-      allowedChar += special + uppercase;
-    }
-    if (in2 && in3 && in4 && !in5) {
-      allowedChar += lowercase + numbers + special;
-    }
-    if (in2 && in3 && !in4 && in5) {
-      allowedChar += lowercase + numbers + uppercase;
-    }
-    if (!in2 && in3 && in4 && in5) {
-      allowedChar += numbers + special + uppercase;
-    }
-    if (in2 && in3 && in4 && in5) {
-      allowedChar +=  numbers + special + uppercase + lowercase;
     }
 
     //for loop and variable allowing the password to be randomly generated
